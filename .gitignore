@@ -1,0 +1,10 @@
+.DS_Store
+admin/target/
+admin/target/classes/
+admin/src/main/resources/.DS_Store
+admin/src/main/resources/static/.DS_Store
+application/target/
+application/target/classes/
+application/src/main/resources/.DS_Store
+application/src/main/resources/static/.DS_Store
+*.log

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="fragments :: html_head(pageTitle='Login')">
+	<meta charset="utf-8">
+	<title>Log in with your account</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<section class="vh-100">
+		<div class="container py-5 h-100">
+			<div class="row d-flex align-items-center justify-content-center h-100">
+				<div class="col-md-8 col-lg-7 col-xl-6">
+					<img src="https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvam9iNjc5LTEwNi14LmpwZw.jpg"
+						class="img-fluid" alt="Phone image">
+				</div>
+
+				<div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+
+					<div class="form-outline mb-4 divider">
+						<p class="text-lg-left fw-bold">Welcome to your favorite SaaS app!</p>
+					</div>
+
+					<form th:action="@{/login}" method="post">
+
+						<div class="form-outline mb-4">
+							<a th:href="@{/oauth2/authorization/cognito}" class="btn btn-primary btn-lg btn-block"
+								style="background-color: #3b5998" href="#!" role="button">
+								<i class="fab fa-facebook-f me-2"></i>Login
+							</a>
+						</div>
+
+						
+<!--
+						 Email input 
+						<div class="form-outline mb-4">
+							<input type="email" id="form1Example13" class="form-control form-control-lg" />
+							<label class="form-label" for="form1Example13">Email address</label>
+						</div>
+
+						 Password input 
+						<div class="form-outline mb-4">
+							<input type="password" id="form1Example23" class="form-control form-control-lg" />
+							<label class="form-label" for="form1Example23">Password</label>
+						</div>
+
+						<div class="d-flex justify-content-around align-items-center mb-4">
+							 Checkbox 
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+								<label class="form-check-label" for="form1Example3"> Remember me </label>
+							</div>
+							<a href="#!">Forgot password?</a>
+						</div>
+
+						 Submit button 
+						<button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+-->
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
