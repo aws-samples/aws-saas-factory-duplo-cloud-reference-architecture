@@ -21,7 +21,7 @@ locals {
       }
     ]
   }
-  rds_db_environment_variables = {
+  rds_environment_variables = {
     "Env" : [
       {
         "Name" : "COGNITO_ENDPOINT",
