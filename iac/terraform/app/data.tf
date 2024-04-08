@@ -1,9 +1,4 @@
 
-
-data "duplocloud_tenant_aws_region" "current" {
-  tenant_id = local.tenant_id
-}
-
 data "aws_caller_identity" "current" {}
 
 data "duplocloud_tenant" "current" {
@@ -17,7 +12,7 @@ locals {
   app_base_domain     = data.terraform_remote_state.infra.outputs["app_base_domain"]
   acm_arn             = data.terraform_remote_state.infra.outputs["acm_arn"]
   infrastructure_name = data.terraform_remote_state.tenant.outputs["infrastructure_name"]
-  database_type       = data.terraform_remote_state.aws_services.outputs["database_type"]
+  # database_type       = data.terraform_remote_state.aws_services.outputs["database_type"]
 
   cognito_endpoint = data.terraform_remote_state.aws_services.outputs["cognito_endpoint"]
   cognito_ids      = data.terraform_remote_state.aws_services.outputs["cognito_ids"]

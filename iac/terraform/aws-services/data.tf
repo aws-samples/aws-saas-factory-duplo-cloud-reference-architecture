@@ -26,14 +26,12 @@ data "duplocloud_native_host_image" "ami" {
 }
 
 locals {
-  app_base_domain       = data.terraform_remote_state.infra.outputs["app_base_domain"]
-  tenant_name           = terraform.workspace
-  tfstate_bucket        = "duplo-tfstate-${data.aws_caller_identity.current.account_id}"
-  tenant_id             = data.duplocloud_tenant.current.id
-  infrastructure_name   = data.terraform_remote_state.tenant.outputs["infrastructure_name"]
-  infrastructure_id     = data.terraform_remote_state.infra.outputs["infrastructure_id"]
-  infrastructure_region = data.terraform_remote_state.infra.outputs["infrastructure_region"]
-  aws_region            = data.duplocloud_tenant_aws_region.current.aws_region
+  app_base_domain     = data.terraform_remote_state.infra.outputs["app_base_domain"]
+  tenant_name         = terraform.workspace
+  tfstate_bucket      = "duplo-tfstate-${data.aws_caller_identity.current.account_id}"
+  tenant_id           = data.duplocloud_tenant.current.id
+  infrastructure_name = data.terraform_remote_state.tenant.outputs["infrastructure_name"]
+  aws_region          = data.duplocloud_tenant_aws_region.current.aws_region
 }
 
 data "terraform_remote_state" "tenant" {

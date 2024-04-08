@@ -6,6 +6,10 @@ terraform {
       source  = "duplocloud/duplocloud"
       version = "~> 0.10.2"
     }
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.44.0"
+    }
   }
 }
 

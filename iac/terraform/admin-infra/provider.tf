@@ -10,6 +10,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
+    external = {
+      source  = "hashicorp/external"
+      version = "2.3.3"
+    }
   }
 }
 
@@ -23,3 +27,4 @@ provider "aws" {
   token      = data.duplocloud_admin_aws_credentials.this.session_token
   region     = var.region
 }
+

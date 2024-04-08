@@ -30,7 +30,6 @@ module "aws_cognito" {
       }
     }
   ]
-  # user_pool_domain
   domain = local.tenant_name
 
   tags = {
@@ -43,7 +42,7 @@ module "aws_cognito" {
 resource "aws_cognito_user" "user1" {
   user_pool_id = module.aws_cognito.id
   username     = "user1"
-  password    = var.congito_user_default_password
+  password     = var.congito_user_default_password
 
   attributes = {
     email          = "user1@example.com"
@@ -54,7 +53,7 @@ resource "aws_cognito_user" "user1" {
 resource "aws_cognito_user" "user2" {
   user_pool_id = module.aws_cognito.id
   username     = "user2"
-  password    = var.congito_user_default_password
+  password     = var.congito_user_default_password
 
   attributes = {
     email          = "user2@example.com"
@@ -65,7 +64,7 @@ resource "aws_cognito_user" "user2" {
 resource "aws_cognito_user" "user3" {
   user_pool_id = module.aws_cognito.id
   username     = "user3"
-  password    = var.congito_user_default_password
+  password     = var.congito_user_default_password
 
   attributes = {
     email          = "user3@example.com"
@@ -73,8 +72,7 @@ resource "aws_cognito_user" "user3" {
   }
 }
 
-
-data "aws_iam_policy_document" "cognito" {
+data "aws_iam_policy_document" "cognito-persmissions" {
   statement {
     actions = [
       "cognito-identity:*",
@@ -95,6 +93,7 @@ data "aws_iam_policy_document" "cognito" {
       ]
     }
   }
+
   statement {
     actions = [
       "cognito-idp:ListUserPools",
@@ -106,13 +105,9 @@ data "aws_iam_policy_document" "cognito" {
   }
 }
 
-resource "aws_iam_policy" "cognito" {
-  name   = "duplo-${local.tenant_name}-cognito"
-  path   = "/"
-  policy = data.aws_iam_policy_document.cognito.json
-}
-
-resource "aws_iam_role_policy_attachment" "cognito" {
-  role       = "duploservices-${local.tenant_name}"
-  policy_arn = aws_iam_policy.cognito.arn
+module "tenant-role" {
+  source          = "git@github.com:duplocloud/terraform-duplocloud-components//modules/tenant-role-extension?ref=8790efc5e7e37cd704ef65792bba53e9d96a218e"
+  tenant_name     = local.tenant_name
+  policy_name     = "cognito-access"
+  iam_policy_json = data.aws_iam_policy_document.cognito-persmissions.json
 }

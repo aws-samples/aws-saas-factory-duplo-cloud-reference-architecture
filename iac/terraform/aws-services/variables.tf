@@ -42,6 +42,6 @@ variable "database_username" {
 variable "congito_user_default_password" {
   description = "Default password for the dummy congito users"
   type        = string
-  sensitive = true
+  sensitive   = true
   default     = "pS/Ffmzx1/sCDjDhcAqG"
 }

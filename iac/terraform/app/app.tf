@@ -21,44 +21,44 @@ locals {
       }
     ]
   }
-  rds_environment_variables = {
-    "Env" : [
-      {
-        "Name" : "COGNITO_ENDPOINT",
-        "Value" : local.cognito_endpoint
-      },
-      {
-        "Name" : "COGNITO_CLIENT_ID",
-        "Value" : local.cognito_ids[0]
-      },
-      {
-        "Name" : "COGNITO_SECRET_ID",
-        "Value" : local.cognito_secrets[0]
-      },
-      {
-        "Name" : "USER_POOL_ID",
-        "Value" : local.user_pool_id
-      },
-      {
-        "name" : "DATABASE_USERNAME",
-        "valueFrom" : {
-          "secretKeyRef" : {
-            "key" : "DATABASE_USERNAME",
-            "name" : "database"
-          }
-        }
-      },
-      {
-        "name" : "DATABASE_PASSWORD",
-        "valueFrom" : {
-          "secretKeyRef" : {
-            "key" : "DATABASE_PASSWORD",
-            "name" : "database"
-          }
-        }
-      }
-    ]
-  }
+  # rds_environment_variables = {
+  #   "Env" : [
+  #     {
+  #       "Name" : "COGNITO_ENDPOINT",
+  #       "Value" : local.cognito_endpoint
+  #     },
+  #     {
+  #       "Name" : "COGNITO_CLIENT_ID",
+  #       "Value" : local.cognito_ids[0]
+  #     },
+  #     {
+  #       "Name" : "COGNITO_SECRET_ID",
+  #       "Value" : local.cognito_secrets[0]
+  #     },
+  #     {
+  #       "Name" : "USER_POOL_ID",
+  #       "Value" : local.user_pool_id
+  #     },
+  #     {
+  #       "name" : "DATABASE_USERNAME",
+  #       "valueFrom" : {
+  #         "secretKeyRef" : {
+  #           "key" : "DATABASE_USERNAME",
+  #           "name" : "database"
+  #         }
+  #       }
+  #     },
+  #     {
+  #       "name" : "DATABASE_PASSWORD",
+  #       "valueFrom" : {
+  #         "secretKeyRef" : {
+  #           "key" : "DATABASE_PASSWORD",
+  #           "name" : "database"
+  #         }
+  #       }
+  #     }
+  #   ]
+  # }
 }
 
 resource "duplocloud_duplo_service" "admin" {
@@ -105,7 +105,8 @@ resource "duplocloud_duplo_service" "application" {
   replicas                             = 1
   cloud_creds_from_k8s_service_account = true
 
-  other_docker_config = jsonencode(local.database_type == "rds" ? local.rds_environment_variables : local.base_environment_variables)
+  # other_docker_config = jsonencode(local.database_type == "rds" ? local.rds_environment_variables : local.base_environment_variables)
+  other_docker_config = jsonencode(local.base_environment_variables)
 }
 
 

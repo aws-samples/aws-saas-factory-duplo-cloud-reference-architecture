@@ -53,3 +53,42 @@ Description: Name of the DuploCloud Infrastructure
 ### <a name="output_tenant_id"></a> [tenant\_id](#output\_tenant\_id)
 
 Description: DuploCloud Tenant ID
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.44.0 |
+| <a name="requirement_duplocloud"></a> [duplocloud](#requirement\_duplocloud) | ~> 0.10.2 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_duplocloud"></a> [duplocloud](#provider\_duplocloud) | 0.10.16 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [duplocloud_tenant.tenant](https://registry.terraform.io/providers/duplocloud/duplocloud/latest/docs/resources/tenant) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_infrastructure_name"></a> [infrastructure\_name](#input\_infrastructure\_name) | Name of the DuploCloud Infrastructure the DuploCloud Tenant should be associated with | `string` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_infrastructure_name"></a> [infrastructure\_name](#output\_infrastructure\_name) | Name of the DuploCloud Infrastructure |
+| <a name="output_tenant_id"></a> [tenant\_id](#output\_tenant\_id) | DuploCloud Tenant ID |
+<!-- END_TF_DOCS -->

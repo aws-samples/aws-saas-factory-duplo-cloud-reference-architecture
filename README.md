@@ -91,15 +91,17 @@ The automation apart of this project supports four models of isolating customer 
 
 ![](./images/4%20-%20Cloud%20Account.png)
 
+![](./images/5%20-%20Hybrid%20Tenancy%20Model.png)
+
+
 ## Access to a DuploCloud Platform
 
 To get access to a DuploCloud platform environment for testing out the automation provided as a part of this project reach out to DuploCloud [here](https://lp.duplocloud.com/aws/saas).
 
-TODO: get public URL from Ian
 
 ## Support
 
-TODO: 
+Reach out to [DuploCloud](https://lp.duplocloud.com/aws/saas) for support.
 
 ## Security
 
@@ -108,14 +110,3 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
-
-
-
-
-
-TODO: Fill this README out!
-
-Be sure to:
-
-* ~~Change the title in this README~~
-* Edit your repository description on GitHub
