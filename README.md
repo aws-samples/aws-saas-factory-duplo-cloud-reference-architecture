@@ -14,6 +14,7 @@
   - [Support](#support)
   - [Security](#security)
   - [License](#license)
+  - [TODO](#todo)
 
 ## Summary
 
@@ -110,3 +111,11 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
+
+## TODO
+
+- [ ] create pipeline for building, testing, pushing application docker image to Duplo created ECR
+- [ ] create pipeline for running terraform plan, apply, destroy
+- [ ] README improvements
+  - [ ] Provide time estimations for each section
+  - [ ] Add some clarification around the sample commands.  For example, if this used in a shared environment the names will need to be unique
