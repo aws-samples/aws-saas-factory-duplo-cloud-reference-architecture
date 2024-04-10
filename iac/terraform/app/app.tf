@@ -89,7 +89,7 @@ resource "duplocloud_duplo_service_lbconfigs" "admin" {
   lbconfigs {
     certificate_arn  = local.acm_arn
     external_port    = 443
-    health_check_url = "/"
+    health_check_url = "/registration"
     is_native        = false
     lb_type          = 1
     port             = "8081"
@@ -127,7 +127,7 @@ resource "duplocloud_duplo_service_lbconfigs" "application" {
   lbconfigs {
     certificate_arn  = local.acm_arn
     external_port    = 443
-    health_check_url = "/"
+    health_check_url = "/login"
     is_native        = false
     lb_type          = 1
     port             = "8082"

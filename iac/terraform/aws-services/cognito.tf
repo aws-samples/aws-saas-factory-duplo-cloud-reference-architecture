@@ -30,7 +30,9 @@ module "aws_cognito" {
       }
     }
   ]
-  domain = local.tenant_name
+
+  # we need this to be unique across all Duplo environments 
+  domain = replace(replace("${local.tenant_name}${local.app_base_domain}", "-", ""), ".", "")
 
   tags = {
     TENANT_NAME   = local.tenant_name

@@ -64,12 +64,12 @@ See the Architecture Diagrams section for examples of customer tenancy patterns 
 ##### VPC per tenant
 
 ```
-./scripts/apply.sh prod-customera admin-infra -var cidr_bit=2
+./scripts/apply.sh prod-customera admin-infra -var cidr_bit=3
 ./scripts/apply.sh customera admin-tenant -var infrastructure_name="prod-customera"
 ./scripts/apply.sh customera aws-services
 ./scripts/apply.sh customera app
 
-./scripts/apply.sh prod-customerb admin-infra -var cidr_bit=3
+./scripts/apply.sh prod-customerb admin-infra -var cidr_bit=4
 ./scripts/apply.sh customerb admin-tenant -var infrastructure_name="prod-customerb"
 ./scripts/apply.sh customerb aws-services
 ./scripts/apply.sh customerb app
@@ -119,3 +119,4 @@ This library is licensed under the MIT-0 License. See the LICENSE file.
 - [ ] README improvements
   - [ ] Provide time estimations for each section
   - [ ] Add some clarification around the sample commands.  For example, if this used in a shared environment the names will need to be unique
+  - [ ] Provide note about expeocted output when running tf apply.  "Workspace 'example name' doesn't exist." is an expected output

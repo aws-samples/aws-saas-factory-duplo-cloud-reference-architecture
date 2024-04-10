@@ -163,6 +163,7 @@ Description: n/a
 | [duplocloud_aws_host.node](https://registry.terraform.io/providers/duplocloud/duplocloud/latest/docs/resources/aws_host) | resource |
 | [duplocloud_k8_secret.database](https://registry.terraform.io/providers/duplocloud/duplocloud/latest/docs/resources/k8_secret) | resource |
 | [duplocloud_rds_instance.db](https://registry.terraform.io/providers/duplocloud/duplocloud/latest/docs/resources/rds_instance) | resource |
+| [duplocloud_s3_bucket.backups](https://registry.terraform.io/providers/duplocloud/duplocloud/latest/docs/resources/s3_bucket) | resource |
 | [kubernetes_manifest.pod_create_database](https://registry.terraform.io/providers/hashicorp/kubernetes/2.24.0/docs/resources/manifest) | resource |
 | [random_password.password](https://registry.terraform.io/providers/hashicorp/random/3.6.0/docs/resources/password) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |

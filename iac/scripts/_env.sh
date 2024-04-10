@@ -1,5 +1,9 @@
 #!/bin/bash -eu
 
+# default to no parallelism to avoid API rate limiting issues
+# but enable a user to override the default by setting TF_PARALLELISM in their own project.
+: "${TF_PARALLELISM:=1}"
+
 # Discover both the AWS Account ID and DuploCloud Default Tenant ID if they are not set.
 # Historically the documentation has had the user set these values so allow the user to specifiy the values and use the user provided values.
 # To support both commercial and GovCloud regions, first grab the region of the default infrastructure which can then be used in `with_aws`

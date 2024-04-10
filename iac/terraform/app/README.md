@@ -97,5 +97,6 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_dns"></a> [dns](#output\_dns) | n/a |
+| <a name="output_admin-dns"></a> [admin-dns](#output\_admin-dns) | n/a |
+| <a name="output_application-dns"></a> [application-dns](#output\_application-dns) | n/a |
 <!-- END_TF_DOCS -->
